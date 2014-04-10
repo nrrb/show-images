@@ -1,11 +1,13 @@
 # Standard Library
+from datetime import datetime
 import os
 import re
 # Third Party Imports
 from flask import Flask, render_template, request
 import requests
+# Local Imports
+from config import SECRET_KEY
 
-SECRET_KEY = os.environ['SHOW_IMAGES_KEY']
 # Regex from http://stackoverflow.com/a/169631
 image_url_pattern = (r'https?://(?:[a-z\-]+\.)+[a-z]{2,6}'
                      r'(?:/[^/#?]+)+\.(?:jpg|gif|png)')
@@ -19,7 +21,8 @@ def index():
     if key and url and key == SECRET_KEY:
         response = requests.get(url)
         image_urls = re.findall(image_url_pattern, response.content)
-        return render_template('index.html', url=url, image_urls=image_urls)
+        now = datetime.isoformat(datetime.now())
+        return render_template('index.html', url=url, image_urls=image_urls, now=now)
     else:
         return 'o_O'
 
