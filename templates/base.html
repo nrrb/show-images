@@ -12,7 +12,9 @@
     <title>{% block title %}{% endblock title %}</title>
 
     {% block styles %}
-    {# All the styles for this page, overide this if you want custom styles sheets #}
+    {# All the styles for this page, override this if you want custom styles sheets #}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}" />
+    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>    
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
     {% endblock %}
     {% endblock %}

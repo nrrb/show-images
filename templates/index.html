@@ -8,7 +8,12 @@
 
     {% for image_url in image_urls %}
         <div class="item">
-        <img src="{{ image_url }}" width="100%">
+        <a href="{{ image_url }}">
+            <img src="{{ image_url }}" width="100%">
+        </a>
+        <div class="image_url">
+            <input class="image_url" type="text" value="{{ image_url }}">
+        </div>
     </div>
     {% endfor %}
 </div>
@@ -23,7 +28,9 @@
 <script src="{{ url_for('static', filename='js/masonry.pkgd.js') }}"></script>
 <script>
     var container = document.querySelector('#images_container');
-    var msnry = new Masonry(container);
+    var msnry = new Masonry(container, {
+        'gutter': 2
+    });
     imagesLoaded(container, function() {
         msnry.layout();
     });
