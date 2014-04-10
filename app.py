@@ -21,10 +21,11 @@ def index():
     if key and url and key == SECRET_KEY:
         response = requests.get(url)
         image_urls = re.findall(image_url_pattern, response.content)
+        image_urls = sorted(list(set(image_urls)))
         now = datetime.isoformat(datetime.now())
         return render_template('index.html', url=url, image_urls=image_urls, now=now)
     else:
         return 'o_O'
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
