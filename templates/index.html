@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if image_urls %}
+    <h1>Images found at {{ url }}</h1>
+    {% for image_url in image_urls %}
+    <img src="{{ image_url }}" />
+    {% endfor %}
+{% else %}
+    <h1>There were no images found at {{ url }}</h1>
+{% endif %}
+
+{% endblock %}
+
+
