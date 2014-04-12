@@ -1,29 +1,10 @@
-body {
-    background-color: black;
-    color: white;
-}
-
-
-h1 {
-    font-family: 'Special Elite', cursive;
-}
-
-input.image_url {
-    font-family: 'Special Elite', cursive;
-    width: 95%;
-    border: 0px;
-    padding: 2px;
-    font-size: 105%;
-    text-align: center;
-}
-
 div.image_url {
     text-align: center;
     width: 100%;
 }
 
 .item {
-    width: 16%;
+    width: 18%;
     padding: 1px;
     margin-bottom: 2px;
 }

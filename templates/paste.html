@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="/paste" method="POST">
+Key: <input type="text" name="key">
+URL: <input type="text" name="url">
+HTML: <textarea name="html"></textarea>
+<input type="submit">
+</form>
+{% endblock %}
