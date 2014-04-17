@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="urls">
+    <ul>
+{% for url in urls %}
+<li><a href="http://127.0.0.1:5000/urls?url={{ url }}&show_images=on&show_links=on">{{ url }}</a></li>
+{% endfor %}
+</ul>
+</div>
+
+
+
+{% endblock %}
